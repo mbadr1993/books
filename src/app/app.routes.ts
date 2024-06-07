@@ -14,7 +14,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'author',
+    path: 'author/:name',
     loadChildren: () =>
       import('./feature/author/author.module').then((m) => m.AuthorModule),
   },
