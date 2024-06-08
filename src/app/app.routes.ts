@@ -30,4 +30,8 @@ export const routes: Routes = [
         (m) => m.WishListModule
       ),
   },
+  {
+    path: '**',
+    redirectTo: '',
+  },
 ];
