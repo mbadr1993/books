@@ -1,1 +1,30 @@
-<p>book-item works!</p>
+<div class="image-container" [routerLink]="['/details', getBookID(book.key)]">
+  <img
+    [src]="
+      book.cover_id
+        ? 'http://covers.openlibrary.org/b/id/' + book.cover_id + '-L.jpg'
+        : 'assets/placeholder.jpg'
+    "
+    [alt]="book.title"
+  />
+</div>
+<div class="details">
+  <span class="year">{{ book.first_publish_year }}</span>
+  <span
+    class="title"
+    [routerLink]="['/details', getBookID(book.key)]"
+    [title]="book.title"
+  >
+    {{ book.title }}</span
+  >
+  <span class="author">
+    @for (author of book.authors; track $index) {
+    {{ author.name }}
+    }
+  </span>
+</div>
+
+<div class="actions">
+  <a [routerLink]="['/details', getBookID(book.key)]">more</a> |
+  <span>add to wishlist</span>
+</div>

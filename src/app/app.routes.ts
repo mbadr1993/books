@@ -7,14 +7,14 @@ export const routes: Routes = [
       import('./feature/landing/landing.module').then((m) => m.LandingModule),
   },
   {
-    path: 'details',
+    path: 'details/:id',
     loadChildren: () =>
       import('./feature/book-details/book-details.module').then(
         (m) => m.BookDetailsModule
       ),
   },
   {
-    path: 'author/:name',
+    path: 'author/:id',
     loadChildren: () =>
       import('./feature/author/author.module').then((m) => m.AuthorModule),
   },

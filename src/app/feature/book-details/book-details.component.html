@@ -1,1 +1,33 @@
-<p>book-details works!</p>
+@if (book) {
+<div class="container mx-auto py-4 max-lg:p-4">
+  <h1>{{ book.title }}</h1>
+</div>
+<div
+  class="container mx-auto grid gap-4 grid-cols-1 lg:grid-cols-2 lg:items-center max-lg:px-4"
+>
+  <div class="image-container">
+    <img
+      [src]="
+        book.covers
+          ? 'http://covers.openlibrary.org/b/id/' + book.covers[0] + '-L.jpg'
+          : 'assets/placeholder.jpg'
+      "
+      [alt]="book.title"
+    />
+  </div>
+  <div class="book-details">
+    <ul>
+      <h1>{{ book.title }}</h1>
+      <p>First Published: {{ book.created.value | date : "mm-dd-yyy" }}</p>
+      <p>
+        Author: @for (author of book.authors; track $index) {
+        {{ author.type }}
+        }
+      </p>
+      <p>Editions: {{ book.revision }}</p>
+      <p>Number of Pages: {{ book.number_of_pages }}</p>
+    </ul>
+    <button>add / remove from wishlist</button>
+  </div>
+</div>
+}
