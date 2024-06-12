@@ -1,27 +1,111 @@
-# Books
+Sure, here is a README file based on the provided requirements:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+---
 
-## Development server
+# Books Online Library
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A simple Angular application to help readers get all the necessary information about books, search for books based on different unique keys, and manage personal favorite books.
 
-## Code scaffolding
+## Table of Contents
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- [Introduction](#introduction)
+- [Business Requirements](#business-requirements)
+- [Getting Started](#getting-started)
+- [API Documentation](#api-documentation)
+- [Project Structure](#project-structure)
+- [Features](#features)
 
-## Build
+## Introduction
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The Books Online Library is an application designed to assist readers in accessing information about books and authors. Users can search for books, view book details, and manage their favorite books in a personal space.
 
-## Running unit tests
+1. **Home Page**:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   - Display a grid of 9 books from the "Finance" subject.
+   - Each book item should show the book cover, publish date, and author names.
+   - Handle cases where books have no covers with a default placeholder.
 
-## Running end-to-end tests
+2. **Book Details Page**:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   - Display details of a book, including First Publish Year, Book Title, Author Names, Edition Count, and Number of Pages.
 
-## Further help
+3. **Author Details Page**:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   - Display details of an author, including Author Photo, Author Name, Birth Date, Work Count, and top 5 subjects.
+
+4. **Search (Bonus)**:
+
+   - Implement a search feature that allows searching by Title, Author Name, or Subject.
+   - Display search results in a 3x3 grid format.
+
+5. **Wishlist (Not finalized)**:
+   - Allow users to add books to a Wishlist and manage their Wishlist from a dedicated page.
+
+##
+
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed on your local machine:
+
+- [Node.js](https://nodejs.org/en/)
+- [Angular CLI](https://angular.io/cli)
+- [Git](https://git-scm.com/)
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone <repository-url>
+   cd books-online-library
+   ```
+
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
+
+### Running the Application
+
+To run the application locally, use:
+
+```bash
+ng serve
+```
+
+Navigate to `http://localhost:4200/` in your browser.
+
+### Building the Application
+
+To build the application for production, use:
+
+```bash
+ng build
+```
+
+The build artifacts will be stored in the `dist/` directory.
+
+## API Documentation
+
+The application utilizes the Open Library API for fetching book and author details. Refer to the official [Open Library API Documentation](https://openlibrary.org/developers/api) for more information.
+
+### Fetching Author Details
+
+To fetch author details by author ID:
+
+- **Endpoint**: `https://openlibrary.org/authors/{author_id}.json`
+- **Example**: `https://openlibrary.org/authors/OL23919A.json`
+
+## Project Structure Note
+
+I attempted to demonstrate the differences between two methods using a modular structure and new stand-alone component features, while also leveraging the new features of Angular.
+
+## Features
+
+- **Home Page**: Displays a grid of 9 books from the "Finance" subject.
+- **Book Details Page**: Shows detailed information about a selected book.
+- **Author Details Page**: Shows detailed information about a selected author.
+- **Search Page** (Bonus): Allows users to search for books by title, author, or subject.
+- **Wishlist Page** (Bonus): Allows users to add books to a Wishlist and manage their Wishlist.

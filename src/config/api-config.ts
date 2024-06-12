@@ -14,8 +14,12 @@ export const APIConfig = {
   getAuthorDeatails: {
     url: (authorID: string) => `${environment.apiUrl}/authors/${authorID}.json`,
   },
-  search: {
+  getAuthorDeatailsRestDetails: {
     url: (query: string, type?: string) =>
       `${environment.apiUrl}/search${type ? '/' + type : null}.json?q=${query}`,
+  },
+  search: {
+    url: (query: string, type?: string) =>
+      `${environment.apiUrl}/search.json?${type ? +type : 'q'}=${query}`,
   },
 };

@@ -12,4 +12,9 @@ export class AuthorService {
   getAuthorDetails(authorID: string): Observable<any> {
     return this.http.get(APIConfig.getAuthorDeatails.url(authorID));
   }
+  getAutherRestDetails(uery: string, type?: string): Observable<any> {
+    return this.http.get(
+      APIConfig.getAuthorDeatailsRestDetails.url(uery, type)
+    );
+  }
 }

@@ -17,7 +17,6 @@ export class AuthorComponent {
 
   constructor(
     private authorService: AuthorService,
-    private searchService: SearchService,
     private route: ActivatedRoute
   ) {
     const authorID = route.snapshot.paramMap.get('id');
@@ -38,8 +37,8 @@ export class AuthorComponent {
           // topWork: data.topwork,
           // subjects: data.subjects,
         };
-        this.searchService
-          .search(this.author.name, 'authors')
+        this.authorService
+          .getAutherRestDetails(this.author.name, 'authors')
           .subscribe((searchData: any) => {
             const restNeededData = this.findAuthorInSearchResult(
               searchData.docs
