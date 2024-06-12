@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { Book } from '../../../shared/interfaces/book';
 
 @Component({
   selector: 'app-book-item',
@@ -9,9 +10,12 @@ import { RouterLink } from '@angular/router';
   styleUrl: './book-item.component.scss',
 })
 export class BookItemComponent {
-  @Input() book: any;
+  @Input({ required: true }) book: Book;
 
   getBookID(key: string) {
     return key.replace('/works/', '');
+  }
+  getAuthorID(key: string) {
+    return key.replace('/authors/', '');
   }
 }

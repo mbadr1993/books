@@ -12,4 +12,7 @@ export class BookDetailsService {
   getBookDetails(bookId: string): Observable<any> {
     return this.http.get(APIConfig.getBookDeatails.url(bookId));
   }
+  getBookbagesNumber(bookId: string): Observable<any> {
+    return this.http.get(APIConfig.getBookbagesNumber.url(bookId));
+  }
 }

@@ -7,6 +7,8 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
       Accept: 'application/json',
       clientId: 'WebsiteConsumer',
       'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': '',
+      'X-Requested-With': '*',
     }),
   });
   return next(authReq);

@@ -3,29 +3,22 @@
   <h1>{{ book.title }}</h1>
 </div>
 <div
-  class="container mx-auto grid gap-4 grid-cols-1 lg:grid-cols-2 lg:items-center max-lg:px-4"
+  class="container mx-auto grid gap-4 grid-cols-1 lg:grid-cols-2 lg:items-center max-lg:px-4 max-lg:pb-4"
 >
   <div class="image-container">
-    <img
-      [src]="
-        book.covers
-          ? 'http://covers.openlibrary.org/b/id/' + book.covers[0] + '-L.jpg'
-          : 'assets/placeholder.jpg'
-      "
-      [alt]="book.title"
-    />
+    <img [src]="book.imageUrl" [alt]="book.title" />
   </div>
-  <div class="book-details">
+  <div class="details">
     <ul>
       <h1>{{ book.title }}</h1>
-      <p>First Published: {{ book.created.value | date : "mm-dd-yyy" }}</p>
+      <p>First Published: {{ book.year | date : "mm-dd-yyy" }}</p>
       <p>
         Author: @for (author of book.authors; track $index) {
         {{ author.type }}
         }
       </p>
-      <p>Editions: {{ book.revision }}</p>
-      <p>Number of Pages: {{ book.number_of_pages }}</p>
+      <p>Editions: {{ book.editionCount }}</p>
+      <p>Number of Pages: {{ book.numberOfPages }}</p>
     </ul>
     <button>add / remove from wishlist</button>
   </div>

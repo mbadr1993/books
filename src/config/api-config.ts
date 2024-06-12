@@ -8,4 +8,14 @@ export const APIConfig = {
   getBookDeatails: {
     url: (bookID: string) => `${environment.apiUrl}/works/${bookID}.json`,
   },
+  getBookbagesNumber: {
+    url: (bookID: string) => `${environment.apiUrl}/books/${bookID}.json`,
+  },
+  getAuthorDeatails: {
+    url: (authorID: string) => `${environment.apiUrl}/authors/${authorID}.json`,
+  },
+  search: {
+    url: (query: string, type?: string) =>
+      `${environment.apiUrl}/search${type ? '/' + type : null}.json?q=${query}`,
+  },
 };

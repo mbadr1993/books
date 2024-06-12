@@ -19,4 +19,18 @@
     color: var.$color-white;
     border-radius: 5px;
   }
+
+  .details {
+    p {
+      margin-bottom: 1rem;
+    }
+    .tag {
+      padding: 0.5rem;
+      margin-left: 0.5rem;
+      border-radius: 5px;
+      background-color: var.$color-primary;
+      color: var.$color-white;
+      font-size: 0.8rem;
+    }
+  }
 }
