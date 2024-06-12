@@ -33,7 +33,7 @@ The Books Online Library is an application designed to assist readers in accessi
 
    - Display details of an author, including Author Photo, Author Name, Birth Date, Work Count, and top 5 subjects.
 
-4. **Search (Bonus)**:
+4. **Search (Not finalized)**:
 
    - Implement a search feature that allows searching by Title, Author Name, or Subject.
    - Display search results in a 3x3 grid format.
